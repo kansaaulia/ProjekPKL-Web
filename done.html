@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Konfirmasi Pembelian</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fdf5cf;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    .container {
+      background: #fff7d0;
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    p {
+      font-size: 15px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      margin: 12px 0;
+      padding: 14px;
+      background: #f2cc7b;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #deb65e;
+      transform: scale(1.02);
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    #file-name {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 500px) {
+      h2, h3, p {
+        font-size: 14px;
+      }
+      .btn {
+        padding: 12px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>TERIMA KASIH TELAH BERBELANJA DI</h2>
+    <h2>ADORNEE CO</h2>
+
+    <h3>ID ORDER ANDA: <strong>20121</strong></h3>
+    <p>Detail pesanan telah dikirim ke alamat email anda.</p>
+
+    <!-- Input file (disembunyikan), trigger pakai JS -->
+    <input type="file" id="buktiPembayaran" accept="image/*,.pdf" onchange="tampilkanNamaFile(event)">
+    <button class="btn" onclick="document.getElementById('buktiPembayaran').click()">UPLOAD BUKTI PEMBAYARAN</button>
+    <div id="file-name"></div>
+
+    <button class="btn" onclick="location.href='index.html'">LANJUT BERBELANJA</button>
+  </div>
+
+  <script>
+    function tampilkanNamaFile(event) {
+      const fileInput = event.target;
+      const file = fileInput.files[0];
+      const fileNameDisplay = document.getElementById('file-name');
+
+      if (file) {
+        fileNameDisplay.textContent = `Bukti terpilih: ${file.name}`;
+        // Di sini kamu bisa lanjut upload ke server pakai fetch/formData kalau ada backend-nya
+      } else {
+        fileNameDisplay.textContent = "";
+      }
+    }
+  </script>
+
+</body>
+</html>

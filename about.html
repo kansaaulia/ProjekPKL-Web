@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About | Adorne Co</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fcf3d7;
+      color: #4d2c1d;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #fcf3d7;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .nav-center ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-center ul li a {
+      text-decoration: none;
+      color: #4d2c1d;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .nav-icons a {
+      color: #4d2c1d;
+      margin-left: 20px;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    /* About section */
+    .about-section {
+      padding: 50px;
+      text-align: center;
+    }
+
+    .about-card {
+      background-color: #810000;
+      color: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    /* Testimonial section */
+    .testimonial-section {
+      padding: 50px;
+      text-align: center;
+    }
+
+    .testimonial-section h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #4d2c1d;
+    }
+
+    .testimonial-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .testimonial-card {
+      background-color: #fff8e7;
+      border: 1px solid #810000;
+      padding: 20px;
+      border-radius: 16px;
+      width: 300px;
+      position: relative;
+      text-align: left;
+    }
+
+    .quote {
+      font-size: 50px;
+      color: #810000;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .profile img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 12px;
+    }
+
+    .profile-info h4 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .role {
+      margin: 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .review {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    ul li a.active {
+  border-bottom: 2px solid #6f4f1e; /* Warna garis bawah sesuai dengan tema */
+  padding-bottom: 5px; /* Memberikan ruang di bawah teks */
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+        <a href="index.html">
+          <img src="adorn_n_co-removebg-preview.png" alt="adorn_n_co-removebg-preview.png" style="height: 100px;">
+        </a>
+      </div>
+      
+    <div class="nav-center">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html" class="active">about</a></li>
+      </ul>
+    </div>
+    <div class="nav-icons">
+      <a href="#"><i class="fas fa-search"></i></a>
+      <a href="#"><i class="fas fa-user"></i></a>
+      <a href="#"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+  </nav>
+
+  <script>
+   const navLinks = document.querySelectorAll('ul li a');
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        // Menghapus kelas active dari semua link
+        navLinks.forEach(link => link.classList.remove('active'));
+        // Menambahkan kelas active ke link yang diklik
+        this.classList.add('active');
+      });
+    });
+    
+  </script>
+  
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="about-card">
+      <p>
+        Selamat datang di Adorne Co! Kami adalah destinasi utama bagi para pecinta aksesori yang ingin menambahkan sentuhan istimewa pada gaya mereka. Di sini, kami menawarkan berbagai pilihan aksesori berkualitas tinggi untuk melengkapi penampilan Anda dengan elegan dan trendi. Kami percaya bahwa aksesori bukan hanya sekadar pelengkap, melainkan bagian penting dari ekspresi diri.
+      </p>
+    </div>
+  </section>
+
+  <section class="testimonial-section">
+    <h2>What Our Customer Say</h2>
+    <div class="testimonial-cards">
+      <div class="testimonial-card">
+        <span class="quote">“</span>
+        <div class="profile">
+          <img src="rina.jpg" alt="Rina Nose">
+          <div class="profile-info">
+            <h4>Rina Nose</h4>
+            <p class="role">Customer</p>
+          </div>
+        </div>
+        <p class="review">Kalung yang saya beli di sini memenuhi ekspektasi saya, bintang lima untuk toko ini!</p>
+      </div>
+  
+      <div class="testimonial-card">
+        <span class="quote">“</span>
+        <div class="profile">
+          <img src="bryan.jpg" alt="Bryan Mof Steven">
+          <div class="profile-info">
+            <h4>Bryan Mof Steven</h4>
+            <p class="role">Customer</p>
+          </div>
+        </div>
+        <p class="review">Benar-benar memuaskan! Jam tangan sport dengan kualitas sangat mendukung dengan harga 500 ribu itu sangatlah berkualitas.</p>
+      </div>
+  
+      <div class="testimonial-card">
+        <span class="quote">“</span>
+        <div class="profile">
+          <img src="dwiki.jpg" alt="Dwiki">
+          <div class="profile-info">
+            <h4>Dwiki</h4>
+            <p class="role">Customer</p>
+          </div>
+        </div>
+        <p class="review">Pelayanan CS-nya ramah banget dan barangnya sampai cepat. Next order lagi sih pasti!</p>
+      </div>
+  
+      <div class="testimonial-card">
+        <span class="quote">“</span>
+        <div class="profile">
+          <img src="hendry.jpg" alt="Hendry">
+          <div class="profile-info">
+            <h4>Hendry</h4>
+            <p class="role">Customer</p>
+          </div>
+        </div>
+        <p class="review">Gue suka banget sama desain kacamatanya, kekinian dan harga masih aman di kantong.</p>
+      </div>
+  
+      <div class="testimonial-card">
+        <span class="quote">“</span>
+        <div class="profile">
+          <img src="jihoon.jpg" alt="Jihoon">
+          <div class="profile-info">
+            <h4>Jihoon</h4>
+            <p class="role">Customer</p>
+          </div>
+        </div>
+        <p class="review">Aku suka banget kalung di sini, modelnya unik dan sesuai foto. Rekomen pokoknya!</p>
+      </div>
+    </div>
+  </section>
+  
+
+</body>
+</html>

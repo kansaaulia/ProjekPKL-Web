@@ -6,7 +6,6 @@
   <title>AdorneeCo</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-
     * {
       margin: 0;
       padding: 0;
@@ -33,37 +32,24 @@
     }
 
     .logo {
-     height: 95px;
+      height: 95px;
       object-fit: contain;
     }
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #633c1d;
-    }
-
-    .nav-left,
-    .nav-center,
-    .nav-right {
-     display: flex;
-     align-items: center;
+    .nav-left, .nav-center, .nav-right {
+      display: flex;
+      align-items: center;
     }
 
     .nav-center {
-     flex: 1;
-     display: flex;
-     justify-content: center;
-     align-items: center;
+      flex: 1;
+      justify-content: center;
     }
 
     .nav-links {
       list-style: none;
       display: flex;
       gap: 2rem;
-      padding: 0;
-      margin: 0;
-      align-items: center;
     }
 
     .nav-links a {
@@ -73,19 +59,10 @@
     }
 
     .nav-right a {
-     margin-left: 1rem;
+      margin-left: 1rem;
       color: #633c1d;
-     font-size: 1.2rem;
+      font-size: 1.2rem;
     }
-
-    
-
-   
-    .nav-links i {
-        font-size: 1.2rem;
-         color: #633c1d;
-    }
-
 
     .hero {
       position: relative;
@@ -111,279 +88,281 @@
       font-weight: bold;
       cursor: pointer;
       border-radius: 8px;
+      text-decoration: none;
     }
 
     .fitur-layanan {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  padding: 3rem 2rem 2rem;
-  background-color: #fff1dc;
-  text-align: center;
-}
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      padding: 3rem 2rem 2rem;
+      background-color: #fff1dc;
+      text-align: center;
+    }
 
-.layanan-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 150px;
-}
+    .layanan-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 150px;
+    }
 
-.layanan-item img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 1rem;
-}
+    .layanan-item img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+    }
 
-.layanan-item p {
-  color: #633c1d;
-  font-weight: 500;
-  font-size: 1rem;
-}
-
+    .layanan-item p {
+      color: #633c1d;
+      font-weight: 500;
+      font-size: 1rem;
+    }
 
     .kategori-banner {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 3rem 2rem;
-  background-color: #fff8ec;
-}
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 3rem 2rem;
+      background-color: #fff8ec;
+    }
 
-.kategori-item {
-  position: relative;
-  width: 250px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
+    .kategori-item {
+      position: relative;
+      width: 250px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
 
-.kategori-item:hover {
-  transform: translateY(-5px);
-}
+    .kategori-item:hover {
+      transform: translateY(-5px);
+    }
 
-.kategori-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+    .kategori-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-.kategori-btn {
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #a0522d;
-  color: white;
-  padding: 0.7rem 1.4rem;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background-color 0.3s;
-}
+    .kategori-btn {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #a0522d;
+      color: white;
+      padding: 0.7rem 1.4rem;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
 
-.kategori-btn:hover {
-  background-color: #84401d;
-}
-
+    .kategori-btn:hover {
+      background-color: #84401d;
+    }
 
     .products-section {
-  padding: 3rem 2rem;
-  background-color: #fffaf0;
-  text-align: center;
-}
+      padding: 3rem 2rem;
+      background-color: #fffaf0;
+      text-align: center;
+    }
 
-.products-section h2 {
-  font-size: 2rem;
-  color: #633c1d;
-  margin-bottom: 2rem;
-}
+    .products-section h2 {
+      font-size: 2rem;
+      color: #633c1d;
+      margin-bottom: 2rem;
+    }
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  max-width: 1100px;
-  margin: auto;
-}
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-.product-card {
-  background: #fff;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-}
+    .product-card {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
 
-.product-card:hover {
-  transform: translateY(-5px);
-}
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
 
-.product-card img {
-  width: 100%;
-  border-radius: 8px;
-  object-fit: cover;
-}
+    .product-card img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
 
-.product-card h3 {
-  margin-top: 1rem;
-  color: #333;
-}
+    .product-card h3 {
+      margin-top: 1rem;
+      color: #333;
+    }
 
-.product-card p {
-  color: #a0522d;
-  font-weight: bold;
-}
+    .product-card p {
+      color: #a0522d;
+      font-weight: bold;
+    }
 
-.product {
-  width: 200px;
-  text-align: center;
-  margin: 10px;
-  transition: transform 0.3s ease;
-}
+    .brand-section {
+      padding: 4rem 2rem;
+      background-color: #fffaf0;
+      text-align: center;
+    }
 
-.product img {
-  width: 100%;
-  border-radius: 12px;
-}
+    .brand-section h2 {
+      font-size: 1.8rem;
+      color: #633c1d;
+      margin-bottom: 2rem;
+    }
 
-.product:hover {
-  transform: scale(1.05);
-}
+    .brand-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
 
-.product h4 {
-  margin: 10px 0 5px;
-  font-size: 16px;
-  color: #3e1f12;
-}
+    .brand-logos img {
+      max-width: 120px;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
 
-.product p {
-  color: #7d3c2d;
-}
+    .brand-logos img:hover {
+      opacity: 1;
+    }
 
-.brand-section {
-  padding: 4rem 2rem;
-  background-color: #fffaf0;
-  text-align: center;
-}
+    .site-footer {
+      background-color: #633c1d;
+      color: #fff;
+      padding: 3rem 2rem 1rem;
+      font-size: 0.95rem;
+    }
 
-.brand-section h2 {
-  font-size: 1.8rem;
-  color: #633c1d;
-  margin-bottom: 2rem;
-}
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: auto;
+      gap: 2rem;
+    }
 
-.brand-logos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
+    .footer-section {
+      flex: 1;
+      min-width: 200px;
+    }
 
-.brand-logos img {
-  max-width: 120px;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
+    .footer-section h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #fdd8a1;
+    }
 
-.brand-logos img:hover {
-  opacity: 1;
-}
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
 
-.site-footer {
-  background-color: #633c1d;
-  color: #fff;
-  padding: 3rem 2rem 1rem;
-  font-size: 0.95rem;
-}
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
 
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 1100px;
-  margin: auto;
-  gap: 2rem;
-}
+    .footer-section ul li a {
+      color: #ffeccf;
+      text-decoration: none;
+    }
 
-.footer-section {
-  flex: 1;
-  min-width: 200px;
-}
+    .footer-section ul li a:hover {
+      text-decoration: underline;
+    }
 
-.footer-section h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #fdd8a1;
-}
+    .sosmed-icons a img {
+      width: 28px;
+      margin-right: 10px;
+      transition: transform 0.2s;
+    }
 
-.footer-section ul {
+    .sosmed-icons a:hover img {
+      transform: scale(1.1);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #ffffff30;
+      font-size: 0.85rem;
+      color: #ffeacc;
+    }
+    .nav-links {
   list-style: none;
-  padding: 0;
+  display: flex;
+  gap: 30px;
 }
 
-.footer-section ul li {
-  margin-bottom: 0.5rem;
-}
-
-.footer-section ul li a {
-  color: #ffeccf;
+.nav-links a {
   text-decoration: none;
+  color: #4d2c1d;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-.footer-section ul li a:hover {
-  text-decoration: underline;
+.nav-links a:hover {
+  color: #a0522d;
 }
 
-.sosmed-icons a img {
-  width: 28px;
-  margin-right: 10px;
-  transition: transform 0.2s;
+.nav-links a.active {
+  border-bottom: 2px solid #a0522d; /* Warna garis bawah sesuai dengan tema */
+  padding-bottom: 5px; /* Memberikan ruang di bawah teks */
 }
 
-.sosmed-icons a:hover img {
-  transform: scale(1.1);
-}
 
-.footer-bottom {
-  text-align: center;
-  padding-top: 2rem;
-  border-top: 1px solid #ffffff30;
-  font-size: 0.85rem;
-  color: #ffeacc;
-}
 
   </style>
 </head>
+
 <body>
+
   <!-- Navbar -->
   <header class="navbar">
     <div class="container">
-        <div class="nav-left">
+      <div class="nav-left">
         <img src="logo.png" alt="Adorsmile Logo" class="logo">
-    </div>
-        <div class="nav-center">
+      </div>
+      <div class="nav-center">
         <ul class="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">About</a></li>
-          </ul>
-    </div>
-    <div class="nav-right">
-        <li><a href="#"><i class="fas fa-search"></i></a></li>
-          <li><a href="#"><i class="fas fa-heart"></i></a></li>
-          <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-    </div>   
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          
+        </ul>
+      </div>
+      <div class="nav-right">
+       
+        <a href="wishlist.html"><i class="fas fa-heart"></i></a>
+        <a href="keranjang.html"><i class="fas fa-shopping-cart"></i></a>
+        <a href="logout.php">Logout</a>
+      
+      </div>
     </div>
   </header>
 
+ 
   <!-- Hero Section -->
   <section class="hero">
-    <img src="banner.png" alt="Banner Aksesoris" class="hero-img">
-    <button class="shop-btn">Shop Now</button>
+    <img src="banner2.png" alt="Banner Aksesoris" class="hero-img">
+    <a href="shop.html" class="shop-btn">Shop Now</a>
   </section>
 
   <!-- Layanan -->
@@ -411,19 +390,19 @@
   <section class="kategori-banner">
     <div class="kategori-item">
       <img src="kategoriT.jpeg" alt="Kategori Tas">
-      <a href="produk.html?kategori=tas" class="kategori-btn">Shop Now</a>
+      <a href="kategori.html?kategori=tas" class="kategori-btn">Shop Now</a>
     </div>
     <div class="kategori-item">
       <img src="kategoriW.jpeg" alt="Kategori Jam">
-      <a href="produk.html?kategori=jam" class="kategori-btn">Shop Now</a>
+      <a href="kategori.html?kategori=Aksesoris Tangan" class="kategori-btn">Shop Now</a>
     </div>
     <div class="kategori-item">
       <img src="kategoriH.jpeg" alt="Kategori Aksesoris Rambut">
-      <a href="produk.html?kategori=aksesoris" class="kategori-btn">Shop Now</a>
+      <a href="kategori.html?kategori=Aksesoris Kepala" class="kategori-btn">Shop Now</a>
     </div>
     <div class="kategori-item">
         <img src="kategoriKc.jpeg" alt="Kategori Kacamata">
-        <a href="produk.html?kategori=kacamata" class="kategori-btn">Shop Now</a>
+        <a href="kategori.html?kategori=Aksesoris Kepala" class="kategori-btn">Shop Now</a>
       </div>
   </section>
   
@@ -501,7 +480,8 @@
       </div>
   
     </div>
-  
+    
+
     <div class="footer-bottom">
       <p>&copy; 2025 AdorneeCo. All rights reserved.</p>
     </div>

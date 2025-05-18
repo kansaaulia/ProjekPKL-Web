@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | AdorneeCo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8e7;
+      margin: 0;
+      padding: 20px;
+      color: #4d2c1d;
+    }
+
+    .navbar {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 12px 24px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #4d2c1d;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #a52a2a;
+}
+
+.nav-links li a.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #a52a2a;
+  border-radius: 2px;
+}
+
+.nav-right a {
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 16px;
+  color: #4d2c1d;
+  transition: color 0.2s ease;
+}
+
+.nav-right a:hover {
+  color: #a52a2a;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .nav-right {
+    margin-top: 10px;
+    display: flex;
+    gap: 16px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .left, .right {
+      flex: 1 1 450px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-top: 0;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .summary {
+      margin-top: 20px;
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+    }
+    .summary div {
+      margin: 8px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+    .checkout-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #a52a2a;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .checkout-btn:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body> 
+  <nav class="navbar">
+    <div class="nav-left">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="checkout.html" class="active">Checkout</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+       
+    
+      <a href="#checkout.html"><i class="fas fa-shopping-cart"></i></a>
+      <a href="user.html"><i class="fas fa-user"></i></a>
+        <a href="user.html"><i class="fas fa-search"></i></a>
+
+    
+    </div>
+  </nav>
+  
+  <div class="container">
+    <!-- Kiri -->
+    <div class="left">
+      <h2>Alamat Pengiriman</h2>
+      <input type="text" id="alamat" placeholder="Masukkan alamat lengkap...">
+
+      <label for="bank">Metode Pembayaran</label>
+      <select id="bank">
+        <option value="">-- Pilih Bank --</option>
+        <option value="BCA">BCA</option>
+        <option value="BNI">BNI</option>
+        <option value="Mandiri">Mandiri</option>
+      </select>
+
+      <label for="voucher">Pilih Voucher</label>
+      <select id="voucher">
+        <option value="none">-- Tidak Pakai --</option>
+        <option value="10">Diskon 10%</option>
+        <option value="freeongkir">Gratis Ongkir</option>
+      </select>
+    </div>
+
+    <!-- Kanan -->
+    <div class="right">
+      <h2>Ringkasan Pesanan</h2>
+      <div><strong id="product-name">Nama Produk</strong></div>
+      <div>Harga: <span id="product-price">Rp 0</span></div>
+      <div>Ongkir: <span id="shipping">-</span></div>
+      
+      <div id="free-shipping-msg" style="display:none; color: green; margin-top: 10px;">
+        Selamat! Alamat Anda di Purbalingga, jadi ongkir gratis 🎉
+      </div>
+      
+      <div class="summary">
+        <div>
+          <span>Diskon</span>
+          <span id="discount">-</span>
+        </div>
+        <div>
+          <strong>Total</strong>
+          <strong id="total">Rp 0</strong>
+        </div>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn" disabled>Checkout</button>
+      
+    </div>
+  </div>
+
+  <script>
+    
+    const products = [
+      { id: 1, name: "Jam Tangan Sport", price: 500000, image: "img/jam-tangan.jpg" },
+      { id: 2, name: "Jedai Aesthetic", price: 10000, image: "img/jedai.jpg" },
+      { id: 3, name: "Bando Lucu", price: 15000, image: "img/bando.jpg" },
+      { id: 4, name: "Kacamata Hitam Pria", price: 50000, image: "img/kacamata-hitam.jpg" },
+      { id: 5, name: "Kalung Y2K viral", price: 50000, image: "img/kalung-y2k.jpg" },
+      { id: 6, name: "Gelang Pandora", price: 1500000, image: "img/gelang-pandora-1.jpg" },
+      { id: 7, name: "Gelang Pandora", price: 1650000, image: "img/gelang-pandora-2.jpg" },
+      { id: 8, name: "Dompet Hermes Pria", price: 1800000, image: "img/dompet-hermes.jpg" },
+      { id: 9, name: "Tas Pria", price: 2200000, image: "img/tas-pria.jpg" },
+      { id: 10, name: "Jam Couple", price: 2400000, image: "img/jam-couple.jpg" },
+      { id: 11, name: "YSL Shoulder Bag", price: 2950000, image: "img/ysl-shoulder-bag.jpg" },
+      { id: 12, name: "Kacamata Balenciaga", price: 5999000, image: "img/kacamata-balenciaga.jpg" },
+      { id: 13, name: "Headphone", price: 5500000, image: "img/headphone.jpg" },
+      { id: 14, name: "Tws Y2K", price: 10000, image: "img/tws-y2k.jpg" },
+      { id: 15, name: "AirPods Max Lucu", price: 10000000, image: "img/airpods-max.jpg" },
+      { id: 16, name: "Kacamata Hitam Pria", price: 9000000, image: "img/kacamata-hitam-2.jpg" },
+      { id: 17, name: "Topi Celine", price: 10999000, image: "img/topi-celine.jpg" },
+  
+        { id: 19, name: "Tas Trendy Channel", price: 6500000, image: "img/tas-channel.jpg" },
+        { id: 20, name: "Tas YSL", price: 10000, image: "img/tas-ysl.jpg" },
+        { id: 21, name: "Tas Pria", price: 15000, image: "img/tas-pria.jpg" },
+        { id: 22, name: "Shoulder Bag Pria", price: 50000, image: "img/shoulder-pria.jpg" },
+        { id: 23, name: "Handbag miu miu", price: 50000, image: "img/handbag-miumiu.jpg" },
+        { id: 24, name: "Sling bag YSL", price: 1500000, image: "img/sling-ysl.jpg" },
+        { id: 25, name: "Handbag Gucci", price: 1650000, image: "img/handbag-gucci.jpg" },
+        { id: 26, name: "Mossdom Sling bag", price: 1505000, image: "img/mossdom.jpg" },
+        { id: 27, name: "Dior Sling bag", price: 2200000, image: "img/dior-sling.jpg" },
+        { id: 28, name: "Shoulder bag Gucci", price: 950000, image: "img/shoulder-gucci.jpg" },
+        { id: 29, name: "Dior Shoulder Bag", price: 2950000, image: "img/dior-shoulder-1.jpg" },
+        { id: 30, name: "Dior Shoulder bag", price: 5999000, image: "img/dior-shoulder-2.jpg" },
+        { id: 31, name: "LV Shoulder bag", price: 5999000, image: "img/lv-shoulder.jpg" },
+        { id: 32, name: "Carit&Koty Shoulder bag", price: 5999000, image:"tas12.jpeg" },
+        { id: 33, name: "Carit&Koty Shoulder bag", price: 4999000, image:"tas13.jpeg" },
+{ id: 34, name: "Shoulder bag", price: 4096000, image:"tas14.jpeg" },
+{ id: 35, name: "YSL new Shoulder bag", price: 15999000, image:"tas15.jpeg" },
+{ id: 36, name: "Celine Shoulder bag", price: 5999000, image:"tas17 (2).jpeg" },
+{ id: 37, name: "Chasler&Kratch Sling bag", price: 2999000, image:"tas17.jpeg" },
+{ id: 38, name: "Christian Dior Shoulder bag", price: 50999000, image:"tas18.jpeg" },
+{ id: 39, name: "Chasler&Kratch Shoulder bag", price: 5444000, image:"tas19.jpeg" },
+{ id: 40, name: "Sling Bag Man", price: 13321000, image:"tas20.jpeg" },
+{ id: 41, name: "Shoulder Bag Man", price: 3999000, image:"tas21.jpeg" },
+{ id: 42, name: "Shoulder bag Men kece", price: 5999000, image:"tas22.jpeg" },
+{ id: 43, name: "Stylish Shoulder bag", price: 5999000, image:"tas23.jpeg" },
+{ id: 44, name: "LV Shoulder&Handbag", price: 155999000, image:"tas24.jpeg" },
+{ id: 45, name: "New Sling bag Ment", price:9450000, image:"tas25.jpeg" },
+{ id: 46, name: "Coach Handbag Men", price: 11669000, image:"tas26.jpeg" },
+{ id: 47, name: "Coach Handbag Men New", price: 225999000, image:"tas27.jpeg" },
+{ id: 48, name: "Celine White Shoulder bag", price: 5999000, image:"tas28.jpeg" },
+
+    ];
+  
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get("id"));
+    const product = products.find(p => p.id === id);
+  
+    const alamatInput = document.getElementById("alamat");
+    const bankSelect = document.getElementById("bank");
+    const voucherSelect = document.getElementById("voucher");
+    const checkoutBtn = document.getElementById("checkoutBtn");
+  
+    let ongkir = 0;
+    let harga = 0;
+  
+    function formatRupiah(angka) {
+      return "Rp " + angka.toLocaleString("id-ID");
+    }
+  
+    function getOngkirFromAlamat(alamat) {
+      const lower = alamat.toLowerCase().trim();
+      if (lower.includes("jakarta")) return 30000;
+      if (lower.includes("bandung")) return 15000;
+      if (lower.includes("surabaya")) return 20000;
+      if (lower.includes("bali")) return 25000;
+      if (lower.includes("purwokerto")) return 5000;
+      if (lower.includes("purbalingga")) return 0;
+
+  
+      return 30000; // default
+    }
+  
+    function updateCheckoutState() {
+      const alamatValid = alamatInput.value.trim() !== "";
+      const bankValid = bankSelect.value !== "";
+      checkoutBtn.disabled = !(alamatValid && bankValid);
+    }
+  
+    function updateSummary() {
+  const alamat = alamatInput.value.trim();
+  const freeShippingMsg = document.getElementById("free-shipping-msg");
+
+  if (alamat === "") {
+    document.getElementById("shipping").textContent = "-";
+    document.getElementById("discount").textContent = "-";
+    document.getElementById("total").textContent = formatRupiah(harga);
+    freeShippingMsg.style.display = "none";
+    return;
+  }
+
+  ongkir = getOngkirFromAlamat(alamat);
+
+  // Deteksi gratis ongkir khusus Purbalingga
+  if (alamat.toLowerCase().includes("purbalingga")) {
+    ongkir = 0; // <- perbaikan penting
+    freeShippingMsg.style.display = "block";
+  } else {
+    freeShippingMsg.style.display = "none";
+  }
+
+  let total = harga + ongkir;
+  let discount = 0;
+  const voucher = voucherSelect.value;
+
+  if (voucher === "10") {
+    discount = total * 0.1;
+  } else if (voucher === "freeongkir") {
+    discount = ongkir;
+  }
+
+  const finalTotal = total - discount;
+
+  document.getElementById("shipping").textContent = ongkir === 0 ? "Gratis" : formatRupiah(ongkir);
+  document.getElementById("discount").textContent = discount > 0 ? "-" + formatRupiah(discount) : "-";
+  document.getElementById("total").textContent = formatRupiah(finalTotal);
+}
+
+
+  
+    if (product) {
+      document.getElementById("product-name").textContent = product.name;
+      document.getElementById("product-price").textContent = formatRupiah(product.price);
+      harga = product.price;
+      updateSummary();
+    }
+  
+    alamatInput.addEventListener("input", () => {
+      updateCheckoutState();
+      updateSummary();
+    });
+  
+    bankSelect.addEventListener("change", () => {
+      updateCheckoutState();
+    });
+  
+    voucherSelect.addEventListener("change", () => {
+      updateSummary();
+    });
+  
+    checkoutBtn.addEventListener("click", () => {
+      if (!checkoutBtn.disabled) {
+        window.location.href = "done.html";
+      }
+    });
+  </script>
+  </body>
+  </html>
