@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detail Produk | AdorneeCo</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fffaf0;
+      margin: 0;
+      padding: 20px;
+      color: #4d2c1d;
+    }
+
+    .product-container {
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .product-image {
+      flex: 1 1 300px;
+    }
+
+    .product-image img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .product-info {
+      flex: 2 1 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-info h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .product-price {
+      font-size: 20px;
+      color: #a52a2a;
+      margin-bottom: 10px;
+    }
+ .navbar {
+  background-color: #fff1c1;
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-left img {
+  height: 60px;
+}
+
+.navbar-center {
+  display: flex;
+  gap: 25px;
+}
+
+.navbar-center a {
+  text-decoration: none;
+  color: #4d2c1d;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.navbar-center a:hover {
+  color: #a52a2a;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar-right i {
+  font-size: 20px;
+  color: #4d2c1d;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.navbar-right i:hover {
+  color: #a52a2a;
+}
+
+    .rating {
+      color: gold;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .description {
+      line-height: 1.6;
+    }
+
+    .actions {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .quantity-input {
+      display: flex;
+      flex-direction: column;
+      font-size: 14px;
+    }
+
+    .quantity-input input {
+      width: 60px;
+      padding: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .checkout-btn {
+      background-color: #a52a2a;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .checkout-btn:hover {
+      background-color: #7b1e1e;
+    }
+
+    .back-btn {
+      display: block;
+      margin: 30px auto;
+      text-align: center;
+      color: #4d2c1d;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+
+  <nav class="navbar">
+    <div class="navbar-left">
+      <a href="index.html"><img src="adorn_n_co-removebg-preview.png" alt="AdorneeCo Logo"></a>
+    
+    </div>
+    <div class="navbar-center">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="navbar-right">
+       <a href="checkout.html"><i class="fas fa-shopping-cart"></i></a>
+      <a href="user.html"><i class="fas fa-user"></i></a>
+        <a href="user.html"><i class="fas fa-search"></i></a>
+
+
+    
+    </div>
+  </nav>
+  <div class="product-container">
+    <div class="product-image">
+      <img id="product-img" src="" alt="Produk">
+    </div>
+    <div class="product-info">
+      <div>
+        <h1 id="product-name">Nama Produk</h1>
+        <div class="product-price" id="product-price">Rp 0</div>
+        <div class="rating" id="product-rating">★★★★★</div>
+        <p class="description" id="product-desc">Deskripsi produk akan muncul di sini...</p>
+          <div class="quantity-input" style="margin: 15px 0;">
+      <label for="quantity" style="font-weight: bold;">Jumlah:</label>
+      <input type="number" id="quantity" name="quantity" min="1" value="1" style="width: 60px; padding: 6px; border-radius: 6px; border: 1px solid #ccc; text-align: center;">
+    </div>
+  </div>
+      </div>
+      <div class="actions">
+        <a href="checkout.html" class="checkout-btn">Checkout Sekarang</a>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-review" style="margin-top: 30px;">
+    <h2 style="font-size: 20px; margin-bottom: 10px;">Penilaian & Ulasan</h2>
+    <div style="color: gold; font-size: 16px;">5/5 ★★★★★ <span style="color: #4d2c1d;">(70 ulasan)</span></div>
+    <div style="margin-top: 15px;">
+      <strong>Most mentioned:</strong>
+      <span style="background-color: #e5e5e5; padding: 4px 8px; border-radius: 12px; font-size: 12px; margin-right: 6px;">Nyaman (40)</span>
+      <span style="background-color: #e5e5e5; padding: 4px 8px; border-radius: 12px; font-size: 12px; margin-right: 6px;">Lembut (25)</span>
+      <span style="background-color: #e5e5e5; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Lembut (5)</span>
+    </div>
+
+    <!-- Ulasan 1 -->
+    <div style="margin-top: 20px; border-top: 1px solid #ccc; padding-top: 10px;">
+      <div style="color: gold;">★★★★★</div>
+      <div><strong>Oleh R*y</strong></div>
+      <span style="background-color: #dcdcdc; padding: 2px 6px; border-radius: 8px; font-size: 12px;">Nyaman</span>
+      <p style="margin-top: 5px;">Kualitas sangat baik<br>
+      Ukuran: One Size | Dibeli pada: 22 Feb 2025</p>
+    </div>
+
+    <!-- Ulasan 2 -->
+    <div style="margin-top: 20px; border-top: 1px solid #ccc; padding-top: 10px;">
+      <div style="color: gold;">★★★★☆</div>
+      <div><strong>Oleh M****d</strong></div>
+      <span style="background-color: #dcdcdc; padding: 2px 6px; border-radius: 8px; font-size: 12px;">Kualitas</span>
+      <p style="margin-top: 5px;">Desain sesuai gambar, bahan lembut dan nyaman dipakai.</p>
+    </div>
+  </div>
+
+ 
+
+</body>
+</html>
+
+</html>
+  <script>
+    const products = [
+      {
+        id: 1,
+        name: "Jam Tangan Sport",
+        price: "Rp 500.000",
+        rating: "★★★★☆",
+        desc: "Jam tangan sporty dengan desain modern dan tahan air.",
+        image: "jam.jpeg"
+      },
+      {
+        id: 2,
+        name: "Jedai Aesthetic",
+        price: "Rp 10.000",
+        rating: "★★★★★",
+        desc: "Jedai rambut dengan warna pastel dan desain kekinian.",
+        image: "acc1.jpeg"
+      },
+      {
+        id: 3,
+        name: "Bando Lucu",
+        price: "Rp 15.000",
+        rating: "★★★★☆",
+        desc: "Bando imut untuk tampilan yang playful dan manis.",
+        image: "acc2.jpeg"
+      },
+      {
+        id: 4,
+        name: "Kacamata Hitam Pria",
+        price: "Rp 50.000",
+        rating: "★★★★☆",
+        desc: "Tampilan keren untuk para lelaki.",
+        image: "kacamata1.jpeg"
+    },
+    {
+  id: 5,
+  name: "Kalung Y2K viral",
+  price: "Rp 50.000",
+  rating: "★★★★★",
+  desc: "Kalung gaya Y2K yang sedang viral dengan desain unik dan kekinian.",
+  image: "kalung.jpeg"
+  
+},
+{
+  id: 6,
+  name: "Gelang Pandora",
+  price: "Rp 1.500.000",
+  rating: "★★★★★",
+  desc: "Gelang Pandora asli dengan charm eksklusif yang elegan.",
+  image: "gelang3.jpeg"
+},
+{
+  id: 7,
+  name: "Gelang Pandora",
+  price: "Rp 1.650.000",
+  rating: "★★★★★",
+  desc: "Gelang Pandora premium edisi terbaru dengan kualitas terbaik.",
+  image: "gelang1.jpeg"
+},
+{
+  id: 8,
+  name: "Dompet Hermes Pria",
+  price: "Rp 1.505.000",
+  rating: "★★★★★",
+  desc: "Dompet kulit asli dari Hermes untuk pria elegan dan stylish.",
+  image: "dompet1.jpeg"
+},
+{
+  id: 9,
+  name: "Tas Pria",
+  price: "Rp 2.200.000",
+  rating: "★★★★★",
+  desc: "Tas pria eksklusif dengan desain modern dan bahan berkualitas tinggi.",
+  image: "tas2.jpg"
+},
+{
+  id: 10,
+  name: "Jam Couple",
+  price: "Rp 950.000",
+  rating: "★★★★★",
+  desc: "Jam tangan couple romantis untuk pasangan yang ingin serasi.",
+  image: "jam1.jpg"
+},
+{
+  id: 11,
+  name: "YSL Shoulder Bag",
+  price: "Rp 2.950.000",
+  rating: "★★★★★",
+  desc: "Shoulder bag YSL dengan desain elegan dan mewah.",
+  image: "tas1.jpg"
+},
+{
+  id: 12,
+  name: "Kacamata Balenciaga",
+  price: "Rp 5.999.000",
+  rating: "★★★★★",
+  desc: "Kacamata branded Balenciaga, gaya edgy dan kekinian.",
+  image: "kacamata4.jpeg"
+},
+
+{
+  id: 13,
+  name: "Headphone",
+  price: "Rp 5.500.000",
+  rating: "★★★★☆",
+  desc: "Headphone dengan suara jernih dan kualitas premium untuk pengalaman audio maksimal.",
+  image: "headphone1.jpeg"
+},
+{
+  id: 14,
+  name: "TWS Y2K",
+  price: "Rp 10.000",
+  rating: "★★★★★",
+  desc: "Earphone wireless bergaya Y2K, cocok untuk fashion dan musik on-the-go.",
+  image: "tws.jpeg"
+},
+{
+  id: 15,
+  name: "AirPods Max Lucu",
+  price: "Rp 10.000.000",
+  rating: "★★★★☆",
+  desc: "AirPods Max dengan desain lucu dan kualitas suara terbaik dari Apple.",
+  image: "headphone2.jpeg"
+},
+{
+  id: 16,
+  name: "Kacamata Hitam Pria",
+  price: "Rp 9.000.000",
+  rating: "★★★★☆",
+  desc: "Kacamata hitam eksklusif untuk pria dengan gaya klasik dan elegan.",
+  image: "tas channel.jpg"
+},
+{
+  id: 17,
+  name: "Topi Celine",
+  price: "Rp 10.999.000",
+  rating: "★★★★★",
+  desc: "Topi branded dari Celine dengan desain mewah dan elegan.",
+  image: "topi.jpg"
+},
+{
+  id: 18,
+  name: "Gelang Pandora",
+  price: "Rp 2.500.000",
+  rating: "★★★★★",
+  desc: "Gelang Pandora edisi khusus dengan charm eksklusif dan elegan.",
+  image: "jam.jpeg"
+},
+{
+  id: 19,
+    name: "Tas Trendy Channel",
+    price: "Rp 6.500.000",
+    rating: "★★★★☆",
+    desc: "Tas trendy dengan desain elegan dan bahan berkualitas tinggi.",
+    image: "tas channel.jpg"
+},
+{
+    id: 20,
+    name: "Tas YSL",
+    price: "Rp 10.000",
+    rating: "★★★☆☆",
+    desc: "Tas branded dengan logo YSL, cocok untuk gaya kasual maupun formal.",
+    image: "tas1.jpg"
+  },
+  {
+    id: 21,
+    name: "Tas Pria",
+    price: "Rp 15.000",
+    rating: "★★★★☆",
+    desc: "Tas serbaguna untuk pria, dengan banyak kompartemen.",
+    image: "tas19.jpeg"
+  },
+  {
+    id: 22,
+    name: "Shoulder Bag Pria",
+    price: "Rp 50.000",
+    rating: "★★★☆☆",
+    desc: "Shoulder bag bergaya modern untuk kebutuhan harian.",
+    image: "tas20.jpeg"
+  },
+  {
+    id: 23,
+    name: "Handbag Miu Miu",
+    price: "Rp 50.000",
+    rating: "★★★★☆",
+    desc: "Handbag dengan sentuhan feminin khas Miu Miu.",
+    image: "tas4.jpg"
+  },
+  {
+    id: 24,
+    name: "Sling Bag YSL",
+    price: "Rp 1.500.000",
+    rating: "★★★★★",
+    desc: "Sling bag YSL original untuk tampilan elegan dan modis.",
+    image: "tas5.jpg"
+  },
+  {
+    id: 25,
+    name: "Handbag Gucci",
+    price: "Rp 1.650.000",
+    rating: "★★★★☆",
+    desc: "Handbag klasik dengan aksen khas Gucci.",
+    image: "tas6.jpg"
+  },
+  {
+    id: 26,
+    name: "Mossdom Sling Bag",
+    price: "Rp 1.505.000",
+    rating: "★★★☆☆",
+    desc: "Sling bag dengan material berkualitas dan desain compact.",
+    image: "tas7.jpg"
+  },
+  {
+    id: 27,
+    name: "Dior Sling Bag",
+    price: "Rp 2.200.000",
+    rating: "★★★★★",
+    desc: "Sling bag Dior dengan detail signature dan tali adjustable.",
+    image: "tas8.jpg"
+  },
+  {
+    id: 28,
+    name: "Shoulder Bag Gucci",
+    price: "Rp 950.000",
+    rating: "★★★★☆",
+    desc: "Shoulder bag ringan dan stylish dengan sentuhan Gucci.",
+    image:"tas9.jpg"
+  },
+  {
+    id: 29,
+    name: "Dior Shoulder Bag 1",
+    price: "Rp 2.950.000",
+    rating: "★★★★★",
+    desc: "Model shoulder bag klasik dari Dior untuk penampilan elegan.",
+    image: "tas10.jpg"
+  },
+  {
+    id: 30,
+    name: "Dior Shoulder Bag 2",
+    price: "Rp 5.999.000",
+    rating: "★★★★☆",
+    desc: "Versi terbaru dari shoulder bag Dior dengan tekstur unik.",
+    image: "tas11.jpg"
+  },
+  {
+    id: 31,
+    name: "LV Shoulder Bag",
+    price: "Rp 5.999.000",
+    rating: "★★★★☆",
+    desc: "Shoulder bag Louis Vuitton, pilihan klasik dengan kesan mewah.",
+    image: "tas12.jpeg"
+  },
+  {
+    id: 32,
+    name: "Carit&Koty Shoulder Bag",
+    price: "Rp 5.999.000",
+    rating: "★★★☆☆",
+    desc: "Shoulder bag edisi terbatas dari Carit & Koty.",
+    image: "tas13.jpeg"
+  },
+  {
+    id: 33,
+    name: "Carit&Koty Shoulder Bag",
+    price: "Rp 5.999.000",
+    rating: "★★★☆☆",
+    desc: "Shoulder bag edisi terbatas dari Carit & Koty.",
+    image: "tas13.jpeg"
+  },
+  {
+  id: 34,
+  name: "Shoulder Bag",
+  price: "Rp 4.096.000",
+  rating: "★★★★★",
+  desc: "Tas shoulder elegan berhiaskan mutiara, cocok untuk acara formal.",
+  image:"tas15.jpeg"
+},
+{
+  id: 35,
+  name: "YSL new Shoulder bag",
+  price: "Rp 15.999.000",
+  rating: "★★★★★",
+  desc: "Shoulder bag elegan dari YSL, dengan desain klasik dan mewah.",
+  image: "tas16.jpeg"
+},
+{
+  id: 36,
+  name: "Celine Shoulder bag",
+  price: "Rp 5.999.000",
+  rating: "★★★★★",
+  desc: "Tas eksklusif dari Celine dengan nuansa modern dan elegan.",
+  image:"tas17 (2).jpeg"
+},
+{
+  id: 37,
+  name: "Chasler&Kratch Sling bag",
+  price: "Rp 2.999.000",
+  rating: "★★★★★",
+  desc: "Sling bag transparan kekinian dari Chasler&Kratch.",
+  image:"tas18.jpeg"
+},
+{
+  id: 38,
+  name: "Christian Dior Shoulder bag",
+  price: "Rp 50.999.000",
+  rating: "★★★★★",
+  desc: "Shoulder bag premium dari Dior dengan motif khas yang mewah.",
+  image: "tas3.jpg"
+},
+{
+  id: 39,
+  name: "LV Men Shoulder Bag",
+  price: "Rp 5.444.000",
+  rating: "★★★★★",
+  desc: "Tas belt eksklusif dari Louis Vuitton, cocok untuk gaya kasual mewah.",
+  image:"tas2.jpg"
+},
+{
+  id: 40,
+  name: "Sling Bag Man",
+  price: "Rp 13.321.000",
+  rating: "★★★★★",
+  desc: "Tas selempang dengan desain army-style yang stylish dan fungsional.",
+  image: "tas21.jpeg"
+},
+{
+  id: 41,
+  name: "Shoulder bag Men kece",
+  price: "Rp 3.999.000",
+  rating: "★★★★★",
+  desc: "Tas selempang pria dengan desain kekinian, cocok untuk gaya santai.",
+  image:"tas22.jpeg"
+},
+{
+  id: 42,
+  name: "Stylish Shoulder bag",
+  price: "Rp 5.999.000",
+  rating: "★★★★★",
+  desc: "Tas flap sederhana berwarna hitam, cocok untuk keseharian.",
+  image: "tas23.jpeg"
+},
+{
+  id: 43,
+  name: "Special Shoulder bag",
+  price: "Rp 5.999.000",
+  rating: "★★★★★",
+  desc: "Shoulder bag eksklusif dengan desain simpel namun elegan.",
+  image: "tas24.jpeg"
+},
+{
+  id: 44,
+  name: "LV Shoulder&Handbag",
+  price: "Rp 155.999.000",
+  rating: "★★★★★",
+  desc: "Tas LV yang bisa digunakan sebagai shoulder bag dan handbag sekaligus.",
+  image: "tas25.jpeg"
+},
+{
+  id: 45,
+  name: "New Sling bag Men",
+  price: "Rp 9.450.000",
+  rating: "★★★★★",
+  desc: "Tas selempang pria dengan desain kasual dan tali lebar nyaman.",
+  image:"tas26.jpeg"
+},
+{
+  id: 46,
+  name: "Coach Handbag Men",
+  price: "Rp 5.999.000",
+  rating: "★★★★★",
+  desc: "Handbag kulit dari Coach, cocok untuk gaya pria modern.",
+  image: "tas27.jpeg"
+},
+{
+  id: 47,
+  name: "Coach Handbag Men New",
+  price: "Rp 5.999.000",
+  rating: "★★★★★",
+  desc: "Model terbaru handbag Coach untuk pria, dengan desain sporty dan praktis.",
+  image:"tas28.jpeg"
+},
+{
+  id: 48,
+  name: "Carzy Horse Shoulder bag",
+  price: "Rp 5.999.000",
+  rating: "★★★★★",
+  desc: "Shoulder bag berbahan kulit premium dengan gaya klasik maskulin.",
+  image:"tas29.jpeg"
+},
+{
+  id: 49,
+  name: "Gelang",
+  price: "Rp 6.500.000",
+  rating: "★★★★★",
+  desc: "Gelang cantik berlapis emas cocok untuk acara formal dan kasual.",
+  image: "gelang1.jpeg"
+},
+{
+  id: 50,
+  name: "Pandora Pink Edition",
+  price: "Rp 10.000.000",
+  rating: "★★★★★",
+  desc: "Perhiasan eksklusif dengan sentuhan pink yang elegan dan mewah.",
+  image: "gelang2.jpeg"
+},
+{
+  id: 51,
+  name: "Pandora Heart Gelang",
+  price: "Rp 15.000.000",
+  rating: "★★★★★",
+  desc: "Gelang berlian berbentuk hati dengan detail Pandora yang khas.",
+  image: "gelang3.jpeg"
+},
+{
+  id: 52,
+  name: "Jam Pria Kece",
+  price: "Rp 50.000",
+  rating: "★★★★★",
+  desc: "Jam tangan sporty untuk pria aktif dengan desain simpel dan keren.",
+  image: "jam.jpeg"
+},
+{
+  id: 53,
+  name: "Apple Watch",
+  price: "Rp 50.000.000",
+  rating: "★★★★★",
+  desc: "Smartwatch canggih dari Apple dengan fitur kesehatan dan teknologi mutakhir.",
+  image: "jam.jpg"
+},
+{
+  id: 54,
+  name: "Couple Watch",
+  price: "Rp 2.500.000",
+  rating: "★★★★★",
+  desc: "Jam tangan pasangan serasi dengan desain minimalis dan elegan.",
+  image:"jam1.jpg"
+},
+{
+  id: 55,
+  name: "Classic Watch",
+  price: "Rp 3.650.000",
+  rating: "★★★★★",
+  desc: "Jam klasik berwarna hitam dengan sentuhan mewah dan berkelas.",
+  image:"jam2.jpg"
+},
+{
+  id: 56,
+  name: "Mossdom Sling bag",
+  price: "Rp 1.505.000",
+  rating: "★★★★★",
+  desc: "Jam tangan wanita dengan tali rantai elegan dan dial berkilau.",
+  image:"jamW1 (8).jpeg"
+},
+{
+  id: 57,
+  name: "Rolex Watch",
+  price: "Rp 8.200.000",
+  rating: "★★★★★",
+  desc: "Jam tangan mewah dari Rolex dengan kualitas tinggi dan desain klasik.",
+  image: "jamW1 (8).jpeg"
+},
+{
+  id: 58,
+  name: "Cute Watch Edition",
+  price: "Rp 950.000",
+  rating: "★★★★★",
+  desc: "Jam tangan lucu berwarna pastel, cocok untuk anak muda atau hadiah.",
+  image:"Cute Watches.jpeg"
+},
+{
+  id: 59,
+  name: "White Dior Watch",
+  price: "Rp 10.950.000",
+  rating: "★★★★★",
+  desc: "Jam tangan elegan dari Dior berwarna putih dengan tali berkilau.",
+  image: "jamW1 (4).jpeg"
+},
+{
+  id: 60,
+  name: "Black Watch",
+  price: "Rp 5.000.000",
+  rating: "★★★★★",
+  desc: "Jam tangan hitam dengan desain minimalis dan cocok untuk acara formal.",
+  image:"jamW1 (5).jpeg"
+},
+{
+  id: 61,
+  name: "Versace",
+  price: "Rp 6.999.000",
+  rating: "★★★★★",
+  desc: "Jam tangan mewah bermerek Versace dengan desain elegan dan premium.",
+  image:"jamW1 (6).jpeg"
+},
+{
+  id: 62,
+  name: "Carit&Koty Shoulder bag",
+  price: "Rp 5.999.000",
+  rating: "★★★★★",
+  desc: "Jam chronograph stylish untuk pria, tampilan elegan dan sporty.",
+  image: "jamW1 (7).jpeg"
+},
+{
+  id: 63,
+  name: "Burberry Watch",
+  price: "Rp 13.950.000",
+  rating: "★★★★★",
+  desc: "Jam tangan dari Burberry dengan tali putih dan dial klasik mewah.",
+  image: "jamW1 (8).jpeg"
+},
+{
+  id: 64,
+  name: "Handmade Watch",
+  price: "Rp 15.000",
+  rating: "★★★★★",
+  desc: "Jam tangan unik dengan gantungan karakter lucu, cocok untuk anak-anak.",
+  image:"Handmade Watch.jpeg"
+},
+{
+  id: 65,
+  name: "Waterproof Watch",
+  price: "Rp 1.999.000",
+  rating: "★★★★★",
+  desc: "Jam tangan tahan air dengan desain bunga yang cantik di tangan.",
+  image: "waterproof watch.jpeg"
+},
+{
+  id: 66,
+  name: "Watch Green",
+  price: "Rp 5.999.000",
+  rating: "★★★★★",
+  desc: "Jam tangan mewah dengan kombinasi warna hijau dan emas yang elegan.",
+  image: "jamW1 (11).jpeg"
+},
+{
+  id: 67,
+  name: "Watch Citizen",
+  price: "Rp 3.000.000",
+  rating: "★★★★★",
+  desc: "Jam tangan sepasang dari Citizen dengan desain klasik dan profesional.",
+  image: "jamW1 (12).jpeg"
+},
+{
+  id: 68,
+  name: "Rolex Ex Edition",
+  price: "Rp 9.999.000",
+  rating: "★★★★★",
+  desc: "Edisi spesial dari Rolex dengan warna rose gold yang menawan.",
+  image: "jamW1 (13).jpeg"
+},
+{
+  id: 69,
+  name: "Small Watch",
+  price: "Rp 30.000",
+  rating: "★★★★★",
+  desc: "Jam tangan mungil dengan desain minimalis, cocok untuk anak-anak atau fashion kasual.",
+  image: "jamW1 (14).jpeg"
+},
+{
+  id: 70,
+  name: "Levs Watch",
+  price: "Rp 5.999.000",
+  rating: "★★★★★",
+  desc: "Jam tangan eksklusif dengan desain modern dan strap kulit premium.",
+  image:"jamW1 (15).jpeg"
+},
+{
+  id: 71,
+  name: "Dior Watch",
+  price: "Rp 2.999.000",
+  rating: "★★★★★",
+  desc: "Jam tangan mewah dari Dior dengan nuansa elegan dan feminin.",
+  image: "jamW1 (16).jpeg"
+},
+{
+  id: 72,
+  name: "Alexander Watch",
+  price: "Rp 7.999.000",
+  rating: "★★★★★",
+  desc: "Desain bold dan maskulin, cocok untuk tampil percaya diri setiap saat.",
+  image: "jamW1 (4).jpeg"
+},
+{
+  id: 73,
+  name: "Gelang Bintang Handmade",
+  price: "Rp 10.000",
+  rating: "★★★★★",
+  desc: "Gelang buatan tangan dengan gantungan bintang lucu, cocok untuk hadiah.",
+  image: "jamW1 (5).jpeg"
+},
+{
+  id: 74,
+  name: "Cincin Gemas Viral",
+  price: "Rp 50.000",
+  rating: "★★★★★",
+  desc: "Cincin viral dengan desain unik dan menggemaskan, populer di media sosial.",
+  image: "jamW1 (6).jpeg"
+},
+{
+  id: 75,
+  name: "Cincin Pandora New",
+  price: "Rp 13.999.000",
+  rating: "★★★★★",
+  desc: "Cincin eksklusif Pandora dengan detail berlian, cocok untuk koleksi mewah.",
+  image: "jamW1 (7).jpeg"
+},
+{
+  id: 76,
+  name: "Cincin Emas Simple Elegan",
+  price: "Rp 2.000.000",
+  rating: "★★★★★",
+  desc: "Cincin emas dengan bentuk V sederhana namun berkelas.",
+  image: "jamW1 (8).jpeg"
+},
+{
+  id: 77,
+  name: "Cincin Emas",
+  price: "Rp 2.999.000",
+  rating: "★★★★★",
+  desc: "Cincin emas klasik dengan desain dua cincin ramping.",
+  image: "jamW1 (9).jpeg"
+},
+{
+  id: 78,
+  name: "Handmade Ring Cute",
+  price: "Rp 25.000",
+  rating: "★★★★★",
+  desc: "Cincin handmade dengan manik warna-warni, cocok untuk gaya remaja.",
+  image: "jamW1 (10).jpeg"
+},
+
+  {
+    id: 79,
+    name: "Headphone Sonic",
+    price: "Rp 6.500.000",
+    rating: "★★★★★",
+    desc: "Headphone Sonic dengarkan suara menjadi lebih jelas.",
+    image: "headphone1.jpeg"
+  },
+  {
+    id: 80,
+    name: "headphone2",
+    price: "Rp 10.000",
+    rating: "★★★★★",
+    desc: "Headphone stylish dengan warna pastel yang lucu.",
+    image: "headphone2.jpeg"
+  },
+  {
+    id: 81,
+    name: "Tws viral",
+    price: "Rp 15.000",
+    rating: "★★★★★",
+    desc: "TWS viral dengan kualitas suara yang jernih dan case travel friendly.",
+    image: "tws1.jpeg"
+  },
+  {
+    id: 82,
+    name: "Tws tik tok viral",
+    price: "Rp 50.000",
+    rating: "★★★★★",
+    desc: "TWS viral di TikTok, desain minimalis dengan logo SONY.",
+    image: "tws2.jpeg"
+  },
+  {
+    id: 83,
+    name: "Tws Cool Black",
+    price: "Rp 50.000",
+    rating: "★★★★★",
+    desc: "TWS gaming dengan desain futuristik dan lampu RGB.",
+    image: "tws3.jpeg"
+  },
+  {
+    id: 84,
+    name: "AirPods Max",
+    price: "Rp 6.999.000",
+    rating: "★★★★★",
+    desc: "Apple AirPods Max dengan kualitas suara premium dan noise cancelling.",
+    image: "airpodsmax1.jpeg"
+  },
+  {
+    id: 85,
+    name: "Headphone Hitam Silver",
+    price: "Rp 7.000.000",
+    rating: "★★★★★",
+    desc: "Headphone elegan dengan perpaduan warna hitam dan silver.",
+    image: "headphonehitam.jpeg"
+  },
+  {
+    id: 86,
+    name: "Sony WH-1000XM",
+    price: "Rp 5.999.000",
+    rating: "★★★★★",
+    desc: "Sony WH-1000XM dengan teknologi noise cancelling terbaru.",
+    image: "sonyheadphone.jpeg"
+  },
+  {
+    id: 87,
+    name: "Headphone Star Silver",
+    price: "Rp 6.800.000",
+    rating: "★★★★★",
+    desc: "Headphone silver dengan motif bintang yang unik.",
+    image: "headphonestar.jpeg"
+  },
+  {
+    id: 88,
+    name: "Kacamata Hitam LV",
+    price: "Rp 3.500.000",
+    rating: "★★★★★",
+    desc: "Kacamata hitam eksklusif Louis Vuitton untuk tampilan stylish.",
+    image: "kacamatalv.jpeg"
+  }
+
+
+
+
+    ];
+
+    // Ambil ID dari URL
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get("id"));
+
+    // Cari produk berdasarkan ID
+    const product = products.find(p => p.id === id);
+
+    if (product) {
+  document.getElementById("product-name").textContent = product.name;
+  document.getElementById("product-price").textContent = product.price;
+  document.getElementById("product-rating").textContent = product.rating;
+  document.getElementById("product-desc").textContent = product.desc;
+  document.getElementById("product-img").src = product.image;
+
+  // ⬇️ Tambahin baris ini:
+  document.getElementById("checkoutLink").href = `checkout.html?id=${product.id}`;
+} else {
+  document.querySelector(".product-container").innerHTML = "<p>Produk tidak ditemukan 😢</p>";
+}
+
+  </script>
+</body>
+</html>
